@@ -1,6 +1,6 @@
 require 'bundler/setup'
 
 Bundler.require
-require './api'
+require './app/api'
 
 run App::API
