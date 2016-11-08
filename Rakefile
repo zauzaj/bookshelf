@@ -13,3 +13,6 @@ namespace :db do
     require_relative 'config/application'
   end
 end
+
+OTR::ActiveRecord.db_dir = 'db'
+OTR::ActiveRecord.seed_file = 'seeds.rb'

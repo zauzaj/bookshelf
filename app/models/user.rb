@@ -1,3 +1,3 @@
 class User < ActiveRecord::Base
-  has_many :books
+  has_many :books, foreign_key: "author_id"
 end
