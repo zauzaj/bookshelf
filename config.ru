@@ -1,5 +1,6 @@
 require 'bundler/setup'
 
 Bundler.require
+require './api'
 
-run Bookshelf
+run App::API

@@ -1,5 +1,5 @@
 module App
-  class Api < Grape::API
+  class API < Grape::API
 
   end
 end

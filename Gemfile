@@ -1,8 +1,7 @@
-source :rubygems
+source "https://rubygems.org"
+
 
 gem 'grape'
 
-group :test do
-  gem 'rspec'
-  gem 'rack-test'
-end
+gem 'rspec'
+gem 'rack-test'
