@@ -19,16 +19,27 @@ describe App::API do
 
   context 'Book' do
     describe 'All Books' do
-      it 'should return list of books' do
+      before do
         get '/books'
-        expect(last_response.status).to eq(200)
+      end
+      it 'should return status 200' do
+        expect(last_response.status).to eq 200
+      end
+
+      it 'should return list of books' do
+        expect(last_response.body.length > 0).to be_truthy
       end
     end
 
     describe 'Get Book' do
-      it 'should return particular book' do
+      it 'should return status 200' do
         get '/books/1'
         expect(last_response.status).to eq 200
+      end
+
+      it 'should return status 404 - not found' do
+        get '/books/15'
+        expect(last_response.status).to eq 404
       end
     end
   end

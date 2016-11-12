@@ -11,6 +11,10 @@ module App
   class API < Grape::API
     format :json
 
+    rescue_from ActiveRecord::RecordNotFound do |e|
+      rack_response({ "status": 404, "message": "Not Found." }, 404)
+    end
+
     resource :books do
       desc 'Return all books'
       get '/' do
@@ -27,6 +31,5 @@ module App
         end
       end
     end
-
   end
 end
