@@ -1,6 +1,11 @@
 require_relative '../app/models/book'
 require_relative '../app/models/user'
 
+db_config = YAML::load(IO.read('config/database.yml'))['development']
+ActiveRecord::Base.establish_connection(db_config)
+
+User.destroy_all
+
 author1 = User.create!(first_name: 'Rus', last_name: 'Olsen', email: 'Eloquent Ruby')
 author1.books.create!(title: 'Eloquent Ruby', description: 'Ruby programming')
 author1.books.create!(title: 'Ruby Pixic', description: 'Advance Ruby')

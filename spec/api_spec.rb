@@ -24,5 +24,12 @@ describe App::API do
         expect(last_response.status).to eq(200)
       end
     end
+
+    describe 'Get Book' do
+      it 'should return particular book' do
+        get '/books/1'
+        expect(last_response.status).to eq 200
+      end
+    end
   end
 end
