@@ -42,5 +42,12 @@ describe App::API do
         expect(last_response.status).to eq 404
       end
     end
+
+    describe 'Create Book' do
+      it 'should return status 201' do
+        post 'users/1/books', title: "Functional Javascript", description: 'Javascript Great Book'
+        expect(last_response.status).to eq 201
+      end
+    end
   end
 end

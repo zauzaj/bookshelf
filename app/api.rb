@@ -1,6 +1,7 @@
 require 'bundler/setup'
 require 'active_record'
 require_relative './models/book'
+require_relative './models/user'
 
 Bundler.require
 
@@ -29,6 +30,19 @@ module App
         get do
           Book.find(params[:id])
         end
+      end
+
+    end
+
+    resource :users do
+      desc 'Create book'
+      params do
+        requires :title, type: String
+        requires :description, type: String
+      end
+      post ':id/books' do
+        author = User.find(params[:id])
+        author.books.create title: params[:title], description: params[:description]
       end
     end
   end
