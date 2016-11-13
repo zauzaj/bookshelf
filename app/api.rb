@@ -2,7 +2,7 @@ require 'bundler/setup'
 require 'active_record'
 require_relative './models/book'
 require_relative './models/user'
-
+require_relative './utils/errors'
 Bundler.require
 
 db_config = YAML::load(IO.read('config/database.yml'))['development']
@@ -10,11 +10,8 @@ ActiveRecord::Base.establish_connection(db_config)
 
 module App
   class API < Grape::API
+    include App::Utils::Errors
     format :json
-
-    rescue_from ActiveRecord::RecordNotFound do |e|
-      rack_response({ "status": 404, "message": "Not Found." }, 404)
-    end
 
     resource :books do
       desc 'Return all books'

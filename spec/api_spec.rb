@@ -37,7 +37,7 @@ describe App::API do
       end
 
       it 'should return status 404 - not found' do
-        get '/books/15'
+        get '/books/1000'
         expect(last_response.status).to eq 404
       end
     end
