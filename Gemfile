@@ -7,7 +7,10 @@ gem 'grape-route-helpers'
 gem 'grape-raketasks'
 gem 'activerecord'
 gem 'pry-rails'
+gem 'simplecov'
 
-gem 'rspec'
-gem 'rack-test', require: "rack/test"
+group :test do
+  gem 'rspec'
+  gem 'rack-test', require: "rack/test"
+end
 

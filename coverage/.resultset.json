@@ -1,0 +1,72 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/zauzaj/projects/Practice/bookshelf/app/api.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+        1,
+        1,
+        2,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        2,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/zauzaj/projects/Practice/bookshelf/app/models/book.rb": [
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/zauzaj/projects/Practice/bookshelf/app/models/user.rb": [
+        1,
+        null,
+        1,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1479059039
+  }
+}

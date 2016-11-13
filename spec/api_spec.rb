@@ -1,5 +1,4 @@
-require 'rspec'
-require 'rack/test'
+require_relative './spec_helper'
 require 'grape'
 require_relative '../app/api'
 require 'pry-rails'
@@ -47,6 +46,11 @@ describe App::API do
       it 'should return status 201' do
         post 'users/1/books', title: "Functional Javascript", description: 'Javascript Great Book'
         expect(last_response.status).to eq 201
+      end
+
+      it 'should return 404' do
+        post 'users/4/books', title: 'Javascript 2', description: 'Another great JS book'
+        expect(last_response.status).to eq 404
       end
     end
   end
