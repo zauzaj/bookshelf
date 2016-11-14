@@ -6,6 +6,7 @@ gem 'grape'
 gem 'grape-route-helpers'
 gem 'grape-raketasks'
 gem 'activerecord'
+gem 'grape_token_auth'
 gem 'pry-rails'
 gem 'simplecov'
 

@@ -6,12 +6,12 @@ ActiveRecord::Base.establish_connection(db_config)
 
 User.destroy_all
 
-author1 = User.create!(first_name: 'Rus', last_name: 'Olsen', email: 'Eloquent Ruby')
+author1 = User.create!(first_name: 'Rus', last_name: 'Olsen', email: 'rusolsen@test.com', password: 'password', password_confirmation: 'password')
 author1.books.create!(title: 'Eloquent Ruby', description: 'Ruby programming')
 author1.books.create!(title: 'Ruby Pixic', description: 'Advance Ruby')
 author1.books.create!(title: 'Rails web apps', description: 'Ruby on Rails web applications')
 
-author2 = User.create!(first_name: 'Obie', last_name: 'Fernandez', email: 'Rails way')
+author2 = User.create!(first_name: 'Obie', last_name: 'Fernandez', email: 'obie@test.com', password: 'password', password_confirmation: 'password')
 
 author2.books.create!(title: 'Learn to program', description: 'Ruby for newbies')
 author2.books.create!(title: 'Ruby pocket reference', description: 'Another ruby book')
