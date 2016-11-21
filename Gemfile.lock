@@ -27,7 +27,21 @@ GEM
       thread_safe (~> 0.3, >= 0.3.1)
     diff-lcs (1.2.5)
     docile (1.1.5)
+    elasticsearch (5.0.0)
+      elasticsearch-api (= 5.0.0)
+      elasticsearch-transport (= 5.0.0)
+    elasticsearch-api (5.0.0)
+      multi_json
+    elasticsearch-model (0.1.9)
+      activesupport (> 3)
+      elasticsearch (> 0.4)
+      hashie
+    elasticsearch-transport (5.0.0)
+      faraday
+      multi_json
     equalizer (0.0.11)
+    faraday (0.10.0)
+      multipart-post (>= 1.2, < 3)
     grape (0.18.0)
       activesupport
       builder
@@ -64,6 +78,7 @@ GEM
     minitest (5.9.1)
     multi_json (1.12.1)
     multi_xml (0.5.5)
+    multipart-post (2.0.0)
     mustermann (0.4.0)
       tool (~> 0.2)
     mustermann-grape (0.4.0)
@@ -117,6 +132,8 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  elasticsearch
+  elasticsearch-model
   grape
   grape-raketasks
   grape-route-helpers

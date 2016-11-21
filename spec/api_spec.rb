@@ -54,4 +54,31 @@ describe App::API do
       end
     end
   end
+  context 'Elasticsearch' do
+    describe 'Create new book' do
+      it 'should create new book' do
+        post 'users/1/books', title: "Functional programming", description: 'Scala Great Book'
+        expect(last_response.status).to eq 201
+      end
+    end
+    describe 'Search books' do
+      it 'should return all books with Ruby' do
+        get "/books/search?q='Ruby'"
+        expect(JSON.parse(last_response.body).count > 0).to be_truthy
+      end
+      it 'should return one book with GO' do
+        get "/books/search?q='GO'"
+        expect(JSON.parse(last_response.body).count ).to eq 1
+      end
+      it 'should have one scala book' do
+        get "/books/search?q='scala'"
+        binding.pry
+        expect(JSON.parse(last_response.body).count ).to eq 1
+      end
+      it 'should have two functional books' do
+        get "/books/search?q='functional'"
+        expect(JSON.parse(last_response.body).count ).to eq 2
+      end
+    end
+  end
 end

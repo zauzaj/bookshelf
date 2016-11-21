@@ -9,6 +9,8 @@ gem 'activerecord'
 gem 'grape_token_auth'
 gem 'pry-rails'
 gem 'simplecov'
+gem 'elasticsearch-model'
+gem 'elasticsearch'
 
 group :test do
   gem 'rspec'
